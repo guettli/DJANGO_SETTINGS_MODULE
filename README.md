@@ -97,3 +97,8 @@ If there is no sane default, then I am unsure what to do. To solve the unsurenes
 get an overview.
 
 Here is a list of options on how to solve this exception, which is well known in the context of the django web framework.
+
+Solution2: .pth file
+Solution3: set environment variable in PyCharm
+Solution4: set environment variable in activate.sh (does not work, if you want to call the test from PyCharm)
+Solution5: make test.py to a module and add above lines to `test/__init__.py`
