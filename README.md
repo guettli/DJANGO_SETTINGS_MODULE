@@ -10,8 +10,9 @@ Here is a list of options on how to solve this exception, which is well known in
 
 ```
 Testing started at 09:40 ...
-/home/guettli/x/venv/bin/python /snap/pycharm-community/179/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py 
-    --path /home/guettli/x/xyz/tests.py
+/home/guettli/x/venv/bin/python 
+   /snap/pycharm-community/179/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py 
+   --path /home/guettli/x/xyz/tests.py
 Launching pytest with arguments /home/guettli/x/xyz/tests.py in /home/guettli/x
 
 ============================= test session starts ==============================
