@@ -15,7 +15,7 @@ Testing started at 09:40 ...
 Launching pytest with arguments /home/guettli/x/xyz/tests.py in /home/guettli/x
 
 ============================= test session starts ==============================
-platform linux -- Python 3.6.9, pytest-5.4.1, py-1.8.1, pluggy-0.13.1 -- /home/guettli/x/venv/bin/python
+platform linux -- Python 3.6.9, pytest-5.4.1, py-1.8.1, pluggy-0.13.1 --
 cachedir: .pytest_cache
 rootdir: /home/guettli/x
 collecting ... 
@@ -40,9 +40,9 @@ venv/lib/python3.6/site-packages/django/conf/__init__.py:76: in __getattr__
     self._setup(name)
 venv/lib/python3.6/site-packages/django/conf/__init__.py:61: in _setup
     % (desc, ENVIRONMENT_VARIABLE))
-E   django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. 
-    You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() 
-    before accessing settings.
+E   django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, 
+    but settings are not configured. You must either define the environment variable 
+    DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
 
 Assertion failed
 collected 0 items / 1 error
