@@ -1,12 +1,14 @@
 # DJANGO_SETTINGS_MODULE
 List of options to solve "django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings."
 
-I like sane defaults. 
 
-If there is no sane default, then I am unsure and create a list of options.
+# The stacktrace
 
-Here is a list of options on how to solve this exception, which is well known in the context of the django web framework.
+I successfully installed django, created a project, and app called `xyz`, created my first models, runserver runs on localhost and the admin interface is working.
 
+Now I wrote some tests and want to execute them directly from my IDE (PyCharm).
+
+But this fails wit this stacktrace:
 
 ```
 Testing started at 09:40 ...
@@ -49,3 +51,49 @@ Assertion failed
 collected 0 items / 1 error
 
 ```
+
+The error starts in my python file `xyz/tests.py`. This file is part of my app called `xyz`.
+
+In the context of Django an [app](https://docs.djangoproject.com/en/3.0/ref/applications/) is like a library. 
+It should be reusable. With other words, it should be independant from your particular environment. 
+
+Why does `manage.py ...` work, but above fails?
+
+Let's look at the directory structure:
+
+```
+manage.py
+mysite/settings.py
+xyz/test.py
+```
+"mysite" is the project. It contains the configuration in the file settings.py
+
+But "xyz" is the app (aka library) which does not contain any settings. It is the job of the 
+project to have settings.
+
+# Solution 1: set environment variable in test.py
+
+I could modify the file `xyz/test.py` and add this at the top:
+
+```
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+import django
+django.setup()
+```
+
+Now it works.
+
+Problem solved?
+
+Not really. As soon, as I want to have several files for testing my app, I would need to copy+paste
+these lines again and again. I would like to avoid this.
+
+# Guideline: Sane defaults
+
+I like sane defaults. 
+
+If there is no sane default, then I am unsure what to do. To solve the unsureness I usualy create a list of options to 
+get an overview.
+
+Here is a list of options on how to solve this exception, which is well known in the context of the django web framework.
