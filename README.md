@@ -75,7 +75,7 @@ project to have settings.
 
 I could modify the file `xyz/test.py` and add this at the top:
 
-```
+```python
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 import django
