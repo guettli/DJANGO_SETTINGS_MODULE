@@ -102,3 +102,7 @@ Solution2: .pth file
 Solution3: set environment variable in PyCharm
 Solution4: set environment variable in activate.sh (does not work, if you want to call the test from PyCharm)
 Solution5: make test.py to a module and add above lines to `test/__init__.py`
+
+## Related:
+
+[Django: settings for tests of a reusable app?](https://stackoverflow.com/questions/60693395/django-settings-for-tests-of-a-reusable-app)
